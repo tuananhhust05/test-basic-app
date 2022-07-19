@@ -1,0 +1,36 @@
+{
+  "name": "electron-basic-html-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "respository": "https://github.com/tuananhhust05/test-basic-app",
+  "scripts": {
+    "start": "electron-packager .",
+    "startapp": "electron . ",
+    "electron-build": "electron-builder",
+    "release": "npm run build && electron-builder --linux --win --mac --x64 --ia32 --publish never",
+    "build": "npm run electron-build",
+    "increment-version": "versiony package.json --patch && git add . && git commit -m 'new version' && git push"
+  },
+  "build": {
+    "extends": null,
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "build/logomes.png"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0",
+    "electron-packager": "^15.5.1",
+    "versiony": "^2.0.1"
+  },
+  "dependencies": {
+    "electron-updater": "^5.0.5",
+    "path": "^0.12.7"
+  }
+}
